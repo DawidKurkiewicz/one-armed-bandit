@@ -30,9 +30,15 @@ const wallet = new Wallet(200)
 
 class Statistics {
     constructor () {
-        this.gameResults = [{win: true, bid: 2}];
+        this.gameResults = [{win: true, bid: 2}, {win: false, bid: -10}];
     }
-
+addGameToStatistics(win, bid){
+    let gameResult = {
+        win,
+        bid
+    }
+    this.gameResults.push(gameResult)
+}
 }
 
 const stats = new Statistics
