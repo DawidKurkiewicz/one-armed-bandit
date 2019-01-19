@@ -15,10 +15,24 @@ class Wallet {
                     return _money += value;
                 } else if ( type === "-") {
                     return _money -= value;
+                } else {
+                    throw new Error ("wrong type")
                 }
+            } else {
+                console.log(typeof value);
+                throw new Error("wrong number")
             }
         }
     }
 }
 
 const wallet = new Wallet(200)
+
+class Statistics {
+    constructor () {
+        this.gameResults = [{win: true, bid: 2}];
+    }
+
+}
+
+const stats = new Statistics
