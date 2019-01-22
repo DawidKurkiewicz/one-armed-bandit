@@ -10,13 +10,13 @@ class Wallet {
         }
 
         this.changeWallet = (value, type = "+") => {
-            if(typeof value === "number" && !isNaN(value)) {
-                if( type === "+") {
+            if (typeof value === "number" && !isNaN(value)) {
+                if (type === "+") {
                     return _money += value;
-                } else if ( type === "-") {
+                } else if (type === "-") {
                     return _money -= value;
                 } else {
-                    throw new Error ("wrong type")
+                    throw new Error("wrong type")
                 }
             } else {
                 console.log(typeof value);
@@ -29,16 +29,25 @@ class Wallet {
 const wallet = new Wallet(200)
 
 class Statistics {
-    constructor () {
-        this.gameResults = [{win: true, bid: 2}, {win: false, bid: -10}];
+    constructor() {
+        this.gameResults = [{ win: true, bid: 2 }, { win: false, bid: -10 }];
     }
-addGameToStatistics(win, bid){
-    let gameResult = {
-        win,
-        bid
+    addGameToStatistics(win, bid) {
+        let gameResult = {
+            win,
+            bid
+        }
+        this.gameResults.push(gameResult)
     }
-    this.gameResults.push(gameResult)
-}
+
+    showGameStatistics() {
+        let games = this.gameResults.length
+        let wins = this.gameResults.filter( result => result.win).length
+        let losses = this.gameResults.filter( result => !result.losses).length
+
+        return[games, wins, losses]
+
+    }
 }
 
 const stats = new Statistics
