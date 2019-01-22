@@ -42,10 +42,10 @@ class Statistics {
 
     showGameStatistics() {
         let games = this.gameResults.length
-        let wins = this.gameResults.filter( result => result.win).length
-        let losses = this.gameResults.filter( result => !result.losses).length
+        let wins = this.gameResults.filter(result => result.win).length
+        let losses = this.gameResults.filter(result => !result.losses).length
 
-        return[games, wins, losses]
+        return [games, wins, losses]
 
     }
 }
@@ -53,14 +53,21 @@ class Statistics {
 const stats = new Statistics
 
 class Draw {
-    constructor () {
+    constructor() {
         this.options = ["red", "green", "blue"];
         let _result = this.drawResults()
         this.getDrawResult = () => _result
     }
-drawResults () {
-    let colors = []
-    return colors 
-}
+    drawResults() {
+        let colors = [];
+        for (let i = 0; i < this.options.length; i++) {
+            const index = Math.floor(Math.random() * this.options.length)
+            const color = this.options[index]
+            colors.push(color)
+        }
+        return colors
+    }
 
 }
+
+const draw = new Draw()
