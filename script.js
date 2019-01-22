@@ -51,3 +51,16 @@ class Statistics {
 }
 
 const stats = new Statistics
+
+class Draw {
+    constructor () {
+        this.options = ["red", "green", "blue"];
+        let _result = this.drawResults()
+        this.getDrawResult = () => _result
+    }
+drawResults () {
+    let colors = []
+    return colors 
+}
+
+}
